@@ -163,6 +163,7 @@ print() # 換行</pre>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/Is9J9ZSTtf0" width="560"></iframe></p>
 <p></p>
 <p>W11題目二</p>
+<p></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
 from browser import document as doc
 import math
@@ -219,7 +220,20 @@ draw_grid(tc, tc, gs)
 
 # 在中心繪製圓形
 draw_circle_in_grid(tc//2, tc//2, 2)</pre>
-<p></p>
+<p><span></span></p>
+<p><span>W11題目二(說明)</span></p>
+<ul class="-mt-1 [li&gt;&amp;]:mt-2 list-disc space-y-2 pl-8" depth="0">
+<li class="whitespace-normal break-words" index="0"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">draw_grid(tc, tc, gs)</code> 會繪製 10x10 的網格</li>
+<li class="whitespace-normal break-words" index="1"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">draw_circle_in_grid(tc//2, tc//2, 2)</code> 會在網格中心繪製半徑為 2 格的圓形</li>
+</ul>
+<p class="whitespace-pre-wrap break-words">      您可以調整 <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">gs</code>（每格像素數）和 <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">tc</code>（總格數）來改變網格大小和畫布大小。</p>
+<p class="whitespace-pre-wrap break-words">      需要注意的是，這段程式碼需要在支持 Brython 的 HTML 環境中執行。確保您的 HTML 檔案中有：</p>
+<ol class="-mt-1 [li&gt;&amp;]:mt-2 list-decimal space-y-2 pl-8" depth="0">
+<li class="whitespace-normal break-words" index="0">引入 Brython 函式庫</li>
+<li class="whitespace-normal break-words" index="1">有 ID 為 <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">brython_div1</code> 的 div 元素</li>
+<li class="whitespace-normal break-words" index="2">使用 <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">brython()</code> 啟動 Brython</li>
+</ol>
+<p><span> </span></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/wZUOolAz3Fk" width="560"></iframe></p><br />w10 << <a href='w10.html'>Previous</a> </div>
         
     <!-- footer -->
