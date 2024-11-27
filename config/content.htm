@@ -392,3 +392,62 @@ print(' ', end=' ') # 空白處
 print() # 換行</pre>
 <p><br/><br/></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/Is9J9ZSTtf0" width="560"></iframe></p>
+<p></p>
+<p>W11題目二</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+import math
+
+# 建立畫布
+canvas = html.CANVAS(width=400, height=400)
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+# 每格的像素數
+gs = 40 # 增加格子大小以便更清楚看到
+tc = 10 # 總列數/行數
+
+ctx = canvas.getContext("2d")
+
+def draw_rect(lux, luy, w, h, s=1, c='#cccccc'):
+"""繪製矩形框線"""
+ctx.lineWidth = s
+ctx.strokeStyle = c
+ctx.beginPath()
+ctx.rect(lux, luy, w, h)
+ctx.stroke()
+
+def draw_grid(width, height, grid_pix):
+"""繪製網格"""
+for i in range(width + 1):
+for j in range(height + 1):
+draw_rect(i*grid_pix, j*grid_pix, grid_pix, grid_pix, 1, "lightgrey")
+
+def fill_cell(x, y, color):
+"""填充特定單元格"""
+ctx.fillStyle = color
+ctx.fillRect(x*gs, y*gs, gs, gs)
+
+def draw_circle_in_grid(center_x, center_y, radius_cells):
+"""
+在網格中心繪製圓形
+center_x, center_y: 圓心所在的網格座標
+radius_cells: 圓的半徑（以格子為單位）
+"""
+ctx.beginPath()
+ctx.fillStyle = "blue"
+ctx.arc(
+(center_x + 0.5) * gs, # X座標
+(center_y + 0.5) * gs, # Y座標
+radius_cells * gs, # 半徑
+0, # 起始角度
+2 * math.pi # 結束角度
+)
+ctx.fill()
+
+# 繪製網格
+draw_grid(tc, tc, gs)
+
+# 在中心繪製圓形
+draw_circle_in_grid(tc//2, tc//2, 2)</pre>
+<p><br/><br/></p>
