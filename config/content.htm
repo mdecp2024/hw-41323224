@@ -429,7 +429,6 @@ print() # 換行</pre>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/Is9J9ZSTtf0" width="560"></iframe></p>
 <p></p>
 <p>W11題目二</p>
-<p></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
 from browser import document as doc
 import math
@@ -488,16 +487,74 @@ draw_grid(tc, tc, gs)
 draw_circle_in_grid(tc//2, tc//2, 2)</pre>
 <p><span></span></p>
 <p><span>W11題目二(說明)</span></p>
-<ul class="-mt-1 [li&gt;&amp;]:mt-2 list-disc space-y-2 pl-8" depth="0">
-<li class="whitespace-normal break-words" index="0"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">draw_grid(tc, tc, gs)</code> 會繪製 10x10 的網格</li>
-<li class="whitespace-normal break-words" index="1"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">draw_circle_in_grid(tc//2, tc//2, 2)</code> 會在網格中心繪製半徑為 2 格的圓形</li>
+<p><span>引入模組</span></p>
+<p><span></span></p>
+<ul>
+<li class="whitespace-normal break-words" index="0"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">html</code>：用於創建 HTML 元素</li>
+<li class="whitespace-normal break-words" index="1"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">document</code>：用於訪問網頁的 DOM 元素</li>
+<li class="whitespace-normal break-words" index="2"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">math</code>：提供數學運算功能</li>
 </ul>
-<p class="whitespace-pre-wrap break-words">      您可以調整 <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">gs</code>（每格像素數）和 <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">tc</code>（總格數）來改變網格大小和畫布大小。</p>
-<p class="whitespace-pre-wrap break-words">      需要注意的是，這段程式碼需要在支持 Brython 的 HTML 環境中執行。確保您的 HTML 檔案中有：</p>
-<ol class="-mt-1 [li&gt;&amp;]:mt-2 list-decimal space-y-2 pl-8" depth="0">
-<li class="whitespace-normal break-words" index="0">引入 Brython 函式庫</li>
-<li class="whitespace-normal break-words" index="1">有 ID 為 <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">brython_div1</code> 的 div 元素</li>
-<li class="whitespace-normal break-words" index="2">使用 <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">brython()</code> 啟動 Brython</li>
-</ol>
+<p>畫布初始化</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0">創建一個 400x400 像素的畫布</li>
+<li class="whitespace-normal break-words" index="1">將畫布放置在 ID 為 <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">brython_div1</code> 的 div 元素中</li>
+</ul>
+<p>繪圖參數</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">gs</code>：Grid Size，每個網格的像素大小</li>
+<li class="whitespace-normal break-words" index="1"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">tc</code>：Total Count，網格的行列數</li>
+<li class="whitespace-normal break-words" index="2"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">ctx</code>：Canvas 的 2D 繪圖上下文</li>
+</ul>
+<p>draw_rect()</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0">功能：繪製一個帶有指定顏色和線寬的矩形框</li>
+<li class="whitespace-normal break-words" index="1">預設顏色為灰色，線寬為1像素</li>
+</ul>
+<p>draw_grid()</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0">功能：使用巢狀迴圈繪製整個網格</li>
+<li class="whitespace-normal break-words" index="1">每個網格使用淡灰色線框繪製</li>
+</ul>
+<p>fill_cell()</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0">功能：填充指定座標的單一網格</li>
+<li class="whitespace-normal break-words" index="1">使用指定顏色填滿整個網格</li>
+</ul>
+<p>draw_circle_in_grid()</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0">功能：在指定網格中心繪製圓形</li>
+<li class="whitespace-normal break-words" index="1">使用 <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">arc()</code> 方法繪製圓形</li>
+<li class="whitespace-normal break-words" index="2">圓心位置為網格中心（加 0.5 是為了置中）</li>
+<li class="whitespace-normal break-words" index="3">藍色填滿整個圓形</li>
+</ul>
+<p>繪圖過程</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0">首先繪製整個網格</li>
+<li class="whitespace-normal break-words" index="1">然後在網格中心繪製半徑為 2 個格子的藍色圓形</li>
+</ul>
+<p>程式變數</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0">可輕鬆調整網格大小 <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">gs</code></li>
+<li class="whitespace-normal break-words" index="1">可改變網格數量 <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">tc</code></li>
+<li class="whitespace-normal break-words" index="2">可修改圓形位置和大小</li>
+<li class="whitespace-normal break-words" index="3">可更換顏色和繪圖樣式</li>
+</ul>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
 <p><span> </span></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/wZUOolAz3Fk" width="560"></iframe></p>

@@ -390,7 +390,42 @@ print('*', end=' ')
 else:
 print(' ', end=' ') # 空白處
 print() # 換行</pre>
-<p><br/><br/></p>
+<p><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]"><span>W11題目一(說明)</span></code></p>
+<p><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">draw_grid(width, height, grid_pix)</code> 函數</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0">功能：創建整個網格</li>
+<li class="whitespace-normal break-words" index="1">使用巢狀迴圈遍歷網格的每一個位置</li>
+<li class="whitespace-normal break-words" index="2">繪製淡灰色的網格線</li>
+</ul>
+<p><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">draw_circle()</code> 函數(數學觀念)</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">distance = math.sqrt((i - center[0])**2 + (j - center[1])**2)</code>
+<ul class="-mt-1 [li&gt;&amp;]:mt-2 list-disc space-y-2 pl-8" depth="1">
+<li class="whitespace-normal break-words" index="0">計算網格中每個點到圓心的歐氏距離</li>
+<li class="whitespace-normal break-words" index="1">使用畢氏定理：√((x1-x2)² + (y1-y2)²)</li>
+</ul>
+</li>
+<li class="whitespace-normal break-words" index="1"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">if abs(distance - r) &lt; 0.5</code>
+<ul class="-mt-1 [li&gt;&amp;]:mt-2 list-disc space-y-2 pl-8" depth="1">
+<li class="whitespace-normal break-words" index="0">判斷點是否在圓的輪廓附近</li>
+<li class="whitespace-normal break-words" index="1">誤差範圍設為 0.5，使輪廓看起來更平滑</li>
+</ul>
+</li>
+</ul>
+<p>關鍵變數</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">gs</code>（Grid Size）：每個網格的像素大小</li>
+<li class="whitespace-normal break-words" index="1"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">tc</code>（Total Count）：網格總數</li>
+<li class="whitespace-normal break-words" index="2"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">n</code>：圓形所在的網格大小</li>
+<li class="whitespace-normal break-words" index="3"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">r</code>：圓的半徑</li>
+<li class="whitespace-normal break-words" index="4"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">center</code>：圓心座標</li>
+</ul>
+<p></p>
+<p></p>
+<p></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/Is9J9ZSTtf0" width="560"></iframe></p>
 <p></p>
 <p>W11題目二</p>
