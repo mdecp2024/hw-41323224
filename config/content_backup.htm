@@ -46,6 +46,217 @@
 <p>熟悉<span>sharex</span>基本功能操作及存檔:</p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/OP5ykHKeWa0" width="560"></iframe></p>
 <p></p>
+<h2>w10</h2>
+<p>題目一:以下說明如何用<span>Brython 頁面、SciTE 編輯器、命令提示字元視窗、Jupyter Lab 以及 Codespaces 環境中執行，金字塔所完成的操作影片</span></p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/asdZWrlokBo" width="560"></iframe></p>
+<p><span>題目二</span></p>
+<p><span><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/OHiqzncmYqs" width="560"></iframe></span></p>
+<p><span>題目三</span></p>
+<p><span><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/cBz77r5BS90" width="560"></iframe></span></p>
+<p><span></span></p>
+<h2>w11_hw</h2>
+<p>題目一</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">n = 10 # 圓形的大小，設置為 10x10
+r = 5 # 圓的半徑
+center = (5, 5) # 圓心的坐標 (5, 5)
+
+# 使用兩層循環遍歷每個位置
+for i in range(n): # 對於每一行
+for j in range(n): # 對於每一列
+# 計算該點 (i, j) 到圓心 (5, 5) 的距離
+distance = ((i - center[0]) ** 2 + (j - center[1]) ** 2) ** 0.5
+
+# 如果距離接近圓的半徑，則打印 * (表示圓形邊界)
+if abs(distance - r) &lt; 0.5:
+print('*', end=' ')
+else:
+print(' ', end=' ') # 空白處
+print() # 換行</pre>
+<p><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]"><span>W11題目一(說明)</span></code></p>
+<p><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">draw_grid(width, height, grid_pix)</code> 函數</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0">功能：創建整個網格</li>
+<li class="whitespace-normal break-words" index="1">使用巢狀迴圈遍歷網格的每一個位置</li>
+<li class="whitespace-normal break-words" index="2">繪製淡灰色的網格線</li>
+</ul>
+<p><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">draw_circle()</code> 函數(數學觀念)</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">distance = math.sqrt((i - center[0])**2 + (j - center[1])**2)</code>
+<ul class="-mt-1 [li&gt;&amp;]:mt-2 list-disc space-y-2 pl-8" depth="1">
+<li class="whitespace-normal break-words" index="0">計算網格中每個點到圓心的歐氏距離</li>
+<li class="whitespace-normal break-words" index="1">使用畢氏定理：√((x1-x2)² + (y1-y2)²)</li>
+</ul>
+</li>
+<li class="whitespace-normal break-words" index="1"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">if abs(distance - r) &lt; 0.5</code>
+<ul class="-mt-1 [li&gt;&amp;]:mt-2 list-disc space-y-2 pl-8" depth="1">
+<li class="whitespace-normal break-words" index="0">判斷點是否在圓的輪廓附近</li>
+<li class="whitespace-normal break-words" index="1">誤差範圍設為 0.5，使輪廓看起來更平滑</li>
+</ul>
+</li>
+</ul>
+<p>關鍵變數</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">gs</code>（Grid Size）：每個網格的像素大小</li>
+<li class="whitespace-normal break-words" index="1"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">tc</code>（Total Count）：網格總數</li>
+<li class="whitespace-normal break-words" index="2"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">n</code>：圓形所在的網格大小</li>
+<li class="whitespace-normal break-words" index="3"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">r</code>：圓的半徑</li>
+<li class="whitespace-normal break-words" index="4"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">center</code>：圓心座標</li>
+</ul>
+<p></p>
+<p></p>
+<p></p>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/Is9J9ZSTtf0" width="560"></iframe></p>
+<p></p>
+<p>W11題目二</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+import math
+
+# 建立畫布
+canvas = html.CANVAS(width=400, height=400)
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+# 每格的像素數
+gs = 40 # 增加格子大小以便更清楚看到
+tc = 10 # 總列數/行數
+
+ctx = canvas.getContext("2d")
+
+def draw_rect(lux, luy, w, h, s=1, c='#cccccc'):
+"""繪製矩形框線"""
+ctx.lineWidth = s
+ctx.strokeStyle = c
+ctx.beginPath()
+ctx.rect(lux, luy, w, h)
+ctx.stroke()
+
+def draw_grid(width, height, grid_pix):
+"""繪製網格"""
+for i in range(width + 1):
+for j in range(height + 1):
+draw_rect(i*grid_pix, j*grid_pix, grid_pix, grid_pix, 1, "lightgrey")
+
+def fill_cell(x, y, color):
+"""填充特定單元格"""
+ctx.fillStyle = color
+ctx.fillRect(x*gs, y*gs, gs, gs)
+
+def draw_circle_in_grid(center_x, center_y, radius_cells):
+"""
+在網格中心繪製圓形
+center_x, center_y: 圓心所在的網格座標
+radius_cells: 圓的半徑（以格子為單位）
+"""
+ctx.beginPath()
+ctx.fillStyle = "blue"
+ctx.arc(
+(center_x + 0.5) * gs, # X座標
+(center_y + 0.5) * gs, # Y座標
+radius_cells * gs, # 半徑
+0, # 起始角度
+2 * math.pi # 結束角度
+)
+ctx.fill()
+
+# 繪製網格
+draw_grid(tc, tc, gs)
+
+# 在中心繪製圓形
+draw_circle_in_grid(tc//2, tc//2, 2)</pre>
+<p><span></span></p>
+<p><span>W11題目二(說明)</span></p>
+<p><span>引入模組</span></p>
+<p><span></span></p>
+<ul>
+<li class="whitespace-normal break-words" index="0"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">html</code>：用於創建 HTML 元素</li>
+<li class="whitespace-normal break-words" index="1"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">document</code>：用於訪問網頁的 DOM 元素</li>
+<li class="whitespace-normal break-words" index="2"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">math</code>：提供數學運算功能</li>
+</ul>
+<p>畫布初始化</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0">創建一個 400x400 像素的畫布</li>
+<li class="whitespace-normal break-words" index="1">將畫布放置在 ID 為 <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">brython_div1</code> 的 div 元素中</li>
+</ul>
+<p>繪圖參數</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">gs</code>：Grid Size，每個網格的像素大小</li>
+<li class="whitespace-normal break-words" index="1"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">tc</code>：Total Count，網格的行列數</li>
+<li class="whitespace-normal break-words" index="2"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">ctx</code>：Canvas 的 2D 繪圖上下文</li>
+</ul>
+<p>draw_rect()</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0">功能：繪製一個帶有指定顏色和線寬的矩形框</li>
+<li class="whitespace-normal break-words" index="1">預設顏色為灰色，線寬為1像素</li>
+</ul>
+<p>draw_grid()</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0">功能：使用巢狀迴圈繪製整個網格</li>
+<li class="whitespace-normal break-words" index="1">每個網格使用淡灰色線框繪製</li>
+</ul>
+<p>fill_cell()</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0">功能：填充指定座標的單一網格</li>
+<li class="whitespace-normal break-words" index="1">使用指定顏色填滿整個網格</li>
+</ul>
+<p>draw_circle_in_grid()</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0">功能：在指定網格中心繪製圓形</li>
+<li class="whitespace-normal break-words" index="1">使用 <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">arc()</code> 方法繪製圓形</li>
+<li class="whitespace-normal break-words" index="2">圓心位置為網格中心（加 0.5 是為了置中）</li>
+<li class="whitespace-normal break-words" index="3">藍色填滿整個圓形</li>
+</ul>
+<p>繪圖過程</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0">首先繪製整個網格</li>
+<li class="whitespace-normal break-words" index="1">然後在網格中心繪製半徑為 2 個格子的藍色圓形</li>
+</ul>
+<p>程式變數</p>
+<p></p>
+<ul>
+<li class="whitespace-normal break-words" index="0">可輕鬆調整網格大小 <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">gs</code></li>
+<li class="whitespace-normal break-words" index="1">可改變網格數量 <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">tc</code></li>
+<li class="whitespace-normal break-words" index="2">可修改圓形位置和大小</li>
+<li class="whitespace-normal break-words" index="3">可更換顏色和繪圖樣式</li>
+</ul>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/wZUOolAz3Fk" width="560"></iframe></p>
+<p>11/27程式</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">n = 11 # 總共行數
+space = '-'
+center = n//2
+#print(center)
+
+for y in range(n):
+for x in range(n):
+print("(", x, ", ", y,")",sep="")</pre>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/e123131d8851e3c32e11011c3d1f8968/raw/95394f58cb55dca0ab132b2165ce2347c579b305/hw3.py">圖框</a></p>
+<p></p>
+<h2>w12_hw</h2>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<h2>w13_hw</h2>
+<p>紅色方框對角線練習</p>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/3d5fd1b872986f7ceddcfe5aec164bf4/raw/209ef45619ca7cb4c7bafc3fece50dc6c9da57a9/w13%25E6%2594%25B9.py">https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/3d5fd1b872986f7ceddcfe5aec164bf4/raw/209ef45619ca7cb4c7bafc3fece50dc6c9da57a9/w13%25E6%2594%25B9.py</a></p>
+<p>圓圈外切正方形</p>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/57d3fcb50236f5d5e90c77f0a6d36208/raw/25ac896a5c0694d0f4e374b49e4981411bea7816/w13.py">https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/57d3fcb50236f5d5e90c77f0a6d36208/raw/25ac896a5c0694d0f4e374b49e4981411bea7816/w13.py</a></p>
+<p>圓圈外切正方形上色</p>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/8b04ed11d41e578d1e45078137ca113e/raw/2cc1049369e9b9d7b0a429e564014d30540583a9/w13%2520color.py">https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/8b04ed11d41e578d1e45078137ca113e/raw/2cc1049369e9b9d7b0a429e564014d30540583a9/w13%2520color.py</a></p>
+<h3>W14_ex</h3>
+<p><span>根據兩個圓繪圖所圍成的區塊</span><span>進行不同顏色著色</span></p>
+<p><span><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/86780e25e47cb8a2637b0d5e83398871/raw/40fe3740590f28a8d12b104178db44f61902e197/w14.py">https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/86780e25e47cb8a2637b0d5e83398871/raw/40fe3740590f28a8d12b104178db44f61902e197/w14.py</a></span></p>
+<p><span></span></p>
 <h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
@@ -363,215 +574,3 @@ doc["threejsblock"].bind("click", threejsblock.do)
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console2"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div2"></div>
-<h1>HW 1 Exam</h1>
-<h2>w10</h2>
-<p>題目一:以下說明如何用<span>Brython 頁面、SciTE 編輯器、命令提示字元視窗、Jupyter Lab 以及 Codespaces 環境中執行，金字塔所完成的操作影片</span></p>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/asdZWrlokBo" width="560"></iframe></p>
-<p><span>題目二</span></p>
-<p><span><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/OHiqzncmYqs" width="560"></iframe></span></p>
-<p><span>題目三</span></p>
-<p><span><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/cBz77r5BS90" width="560"></iframe></span></p>
-<p><span></span></p>
-<h2>w11_hw</h2>
-<p>題目一</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">n = 10 # 圓形的大小，設置為 10x10
-r = 5 # 圓的半徑
-center = (5, 5) # 圓心的坐標 (5, 5)
-
-# 使用兩層循環遍歷每個位置
-for i in range(n): # 對於每一行
-for j in range(n): # 對於每一列
-# 計算該點 (i, j) 到圓心 (5, 5) 的距離
-distance = ((i - center[0]) ** 2 + (j - center[1]) ** 2) ** 0.5
-
-# 如果距離接近圓的半徑，則打印 * (表示圓形邊界)
-if abs(distance - r) &lt; 0.5:
-print('*', end=' ')
-else:
-print(' ', end=' ') # 空白處
-print() # 換行</pre>
-<p><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]"><span>W11題目一(說明)</span></code></p>
-<p><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">draw_grid(width, height, grid_pix)</code> 函數</p>
-<p></p>
-<ul>
-<li class="whitespace-normal break-words" index="0">功能：創建整個網格</li>
-<li class="whitespace-normal break-words" index="1">使用巢狀迴圈遍歷網格的每一個位置</li>
-<li class="whitespace-normal break-words" index="2">繪製淡灰色的網格線</li>
-</ul>
-<p><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">draw_circle()</code> 函數(數學觀念)</p>
-<p></p>
-<ul>
-<li class="whitespace-normal break-words" index="0"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">distance = math.sqrt((i - center[0])**2 + (j - center[1])**2)</code>
-<ul class="-mt-1 [li&gt;&amp;]:mt-2 list-disc space-y-2 pl-8" depth="1">
-<li class="whitespace-normal break-words" index="0">計算網格中每個點到圓心的歐氏距離</li>
-<li class="whitespace-normal break-words" index="1">使用畢氏定理：√((x1-x2)² + (y1-y2)²)</li>
-</ul>
-</li>
-<li class="whitespace-normal break-words" index="1"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">if abs(distance - r) &lt; 0.5</code>
-<ul class="-mt-1 [li&gt;&amp;]:mt-2 list-disc space-y-2 pl-8" depth="1">
-<li class="whitespace-normal break-words" index="0">判斷點是否在圓的輪廓附近</li>
-<li class="whitespace-normal break-words" index="1">誤差範圍設為 0.5，使輪廓看起來更平滑</li>
-</ul>
-</li>
-</ul>
-<p>關鍵變數</p>
-<p></p>
-<ul>
-<li class="whitespace-normal break-words" index="0"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">gs</code>（Grid Size）：每個網格的像素大小</li>
-<li class="whitespace-normal break-words" index="1"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">tc</code>（Total Count）：網格總數</li>
-<li class="whitespace-normal break-words" index="2"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">n</code>：圓形所在的網格大小</li>
-<li class="whitespace-normal break-words" index="3"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">r</code>：圓的半徑</li>
-<li class="whitespace-normal break-words" index="4"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">center</code>：圓心座標</li>
-</ul>
-<p></p>
-<p></p>
-<p></p>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/Is9J9ZSTtf0" width="560"></iframe></p>
-<p></p>
-<p>W11題目二</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
-from browser import document as doc
-import math
-
-# 建立畫布
-canvas = html.CANVAS(width=400, height=400)
-brython_div = doc["brython_div1"]
-brython_div &lt;= canvas
-
-# 每格的像素數
-gs = 40 # 增加格子大小以便更清楚看到
-tc = 10 # 總列數/行數
-
-ctx = canvas.getContext("2d")
-
-def draw_rect(lux, luy, w, h, s=1, c='#cccccc'):
-"""繪製矩形框線"""
-ctx.lineWidth = s
-ctx.strokeStyle = c
-ctx.beginPath()
-ctx.rect(lux, luy, w, h)
-ctx.stroke()
-
-def draw_grid(width, height, grid_pix):
-"""繪製網格"""
-for i in range(width + 1):
-for j in range(height + 1):
-draw_rect(i*grid_pix, j*grid_pix, grid_pix, grid_pix, 1, "lightgrey")
-
-def fill_cell(x, y, color):
-"""填充特定單元格"""
-ctx.fillStyle = color
-ctx.fillRect(x*gs, y*gs, gs, gs)
-
-def draw_circle_in_grid(center_x, center_y, radius_cells):
-"""
-在網格中心繪製圓形
-center_x, center_y: 圓心所在的網格座標
-radius_cells: 圓的半徑（以格子為單位）
-"""
-ctx.beginPath()
-ctx.fillStyle = "blue"
-ctx.arc(
-(center_x + 0.5) * gs, # X座標
-(center_y + 0.5) * gs, # Y座標
-radius_cells * gs, # 半徑
-0, # 起始角度
-2 * math.pi # 結束角度
-)
-ctx.fill()
-
-# 繪製網格
-draw_grid(tc, tc, gs)
-
-# 在中心繪製圓形
-draw_circle_in_grid(tc//2, tc//2, 2)</pre>
-<p><span></span></p>
-<p><span>W11題目二(說明)</span></p>
-<p><span>引入模組</span></p>
-<p><span></span></p>
-<ul>
-<li class="whitespace-normal break-words" index="0"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">html</code>：用於創建 HTML 元素</li>
-<li class="whitespace-normal break-words" index="1"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">document</code>：用於訪問網頁的 DOM 元素</li>
-<li class="whitespace-normal break-words" index="2"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">math</code>：提供數學運算功能</li>
-</ul>
-<p>畫布初始化</p>
-<p></p>
-<ul>
-<li class="whitespace-normal break-words" index="0">創建一個 400x400 像素的畫布</li>
-<li class="whitespace-normal break-words" index="1">將畫布放置在 ID 為 <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">brython_div1</code> 的 div 元素中</li>
-</ul>
-<p>繪圖參數</p>
-<p></p>
-<ul>
-<li class="whitespace-normal break-words" index="0"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">gs</code>：Grid Size，每個網格的像素大小</li>
-<li class="whitespace-normal break-words" index="1"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">tc</code>：Total Count，網格的行列數</li>
-<li class="whitespace-normal break-words" index="2"><code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">ctx</code>：Canvas 的 2D 繪圖上下文</li>
-</ul>
-<p>draw_rect()</p>
-<p></p>
-<ul>
-<li class="whitespace-normal break-words" index="0">功能：繪製一個帶有指定顏色和線寬的矩形框</li>
-<li class="whitespace-normal break-words" index="1">預設顏色為灰色，線寬為1像素</li>
-</ul>
-<p>draw_grid()</p>
-<p></p>
-<ul>
-<li class="whitespace-normal break-words" index="0">功能：使用巢狀迴圈繪製整個網格</li>
-<li class="whitespace-normal break-words" index="1">每個網格使用淡灰色線框繪製</li>
-</ul>
-<p>fill_cell()</p>
-<p></p>
-<ul>
-<li class="whitespace-normal break-words" index="0">功能：填充指定座標的單一網格</li>
-<li class="whitespace-normal break-words" index="1">使用指定顏色填滿整個網格</li>
-</ul>
-<p>draw_circle_in_grid()</p>
-<p></p>
-<ul>
-<li class="whitespace-normal break-words" index="0">功能：在指定網格中心繪製圓形</li>
-<li class="whitespace-normal break-words" index="1">使用 <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">arc()</code> 方法繪製圓形</li>
-<li class="whitespace-normal break-words" index="2">圓心位置為網格中心（加 0.5 是為了置中）</li>
-<li class="whitespace-normal break-words" index="3">藍色填滿整個圓形</li>
-</ul>
-<p>繪圖過程</p>
-<p></p>
-<ul>
-<li class="whitespace-normal break-words" index="0">首先繪製整個網格</li>
-<li class="whitespace-normal break-words" index="1">然後在網格中心繪製半徑為 2 個格子的藍色圓形</li>
-</ul>
-<p>程式變數</p>
-<p></p>
-<ul>
-<li class="whitespace-normal break-words" index="0">可輕鬆調整網格大小 <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">gs</code></li>
-<li class="whitespace-normal break-words" index="1">可改變網格數量 <code class="bg-text-200/5 border border-0.5 border-border-300 text-danger-000 whitespace-pre-wrap rounded-[0.3rem] px-1 py-px text-[0.9rem]">tc</code></li>
-<li class="whitespace-normal break-words" index="2">可修改圓形位置和大小</li>
-<li class="whitespace-normal break-words" index="3">可更換顏色和繪圖樣式</li>
-</ul>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/wZUOolAz3Fk" width="560"></iframe></p>
-<p>11/27程式</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">n = 11 # 總共行數
-space = '-'
-center = n//2
-#print(center)
-
-for y in range(n):
-for x in range(n):
-print("(", x, ", ", y,")",sep="")</pre>
-<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/e123131d8851e3c32e11011c3d1f8968/raw/95394f58cb55dca0ab132b2165ce2347c579b305/hw3.py">圖框</a></p>
-<p></p>
-<h2>w12_hw</h2>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<h2>w13_hw</h2>
-<p>紅色方框對角線練習</p>
-<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/3d5fd1b872986f7ceddcfe5aec164bf4/raw/209ef45619ca7cb4c7bafc3fece50dc6c9da57a9/w13%25E6%2594%25B9.py">https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/3d5fd1b872986f7ceddcfe5aec164bf4/raw/209ef45619ca7cb4c7bafc3fece50dc6c9da57a9/w13%25E6%2594%25B9.py</a></p>
-<p>圓圈外切正方形</p>
-<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/57d3fcb50236f5d5e90c77f0a6d36208/raw/25ac896a5c0694d0f4e374b49e4981411bea7816/w13.py">https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/57d3fcb50236f5d5e90c77f0a6d36208/raw/25ac896a5c0694d0f4e374b49e4981411bea7816/w13.py</a></p>
-<p>圓圈外切正方形上色</p>
-<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/8b04ed11d41e578d1e45078137ca113e/raw/2cc1049369e9b9d7b0a429e564014d30540583a9/w13%2520color.py">https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/8b04ed11d41e578d1e45078137ca113e/raw/2cc1049369e9b9d7b0a429e564014d30540583a9/w13%2520color.py</a></p>
-<h3>W14_ex</h3>
-<p><span>根據兩個圓繪圖所圍成的區塊</span><span>進行不同顏色著色</span></p>
-<p><span><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/86780e25e47cb8a2637b0d5e83398871/raw/40fe3740590f28a8d12b104178db44f61902e197/w14.py">https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/86780e25e47cb8a2637b0d5e83398871/raw/40fe3740590f28a8d12b104178db44f61902e197/w14.py</a></span></p>
-<p><span></span></p>
