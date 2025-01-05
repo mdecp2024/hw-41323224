@@ -611,7 +611,7 @@ def main():
 
 # 執行主程式
 main()</pre>
-<pre><br/><br/></pre>
+<pre><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/q4Z17OgLMWc" width="560"></iframe><br/><br/></pre>
 <h1>HW 3</h1>
 <h4>主題: Python 的數字、演算法與迴圈 (20%)</h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 4 and Part 5</p>
@@ -620,7 +620,62 @@ main()</pre>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 3 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <h3><span>w16_exam2</span></h3>
-<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/39d094f352882e77d57abfe2deb7acf9/raw/548dda271d79f1364539ce88b9ad01fb8846b65e/gistfile1.txt">迷宮</a></p>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/aad00e296029e8c2255f2f4cb09b8109/raw/075db9dd9b412b4f7af26db29289696588ff8656/w16%2520ex-2.py">迷宮</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+
+
+# 設定迷宮畫布大小
+canvas = html.CANVAS(width=300, height=300)
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+# 取得 canvas 的繪圖上下文
+ctx = canvas.getContext("2d")
+
+# 標示左上方點座標 (32, 24)
+ctx.font = "12px Arial"
+ctx.fillStyle = "red"
+ctx.fillText("(32, 24)", 36, 14)
+
+# 定義藍色線條的屬性
+ctx.strokeStyle = "blue"
+ctx.lineWidth = 2
+
+# 設定迷宮起點的偏移量
+offset_x, offset_y = 32, 24
+
+# 迷宮的線條座標
+maze_lines = [
+    ((0, 0), (86, 0)),
+    ((0, 0), (0, 200)),
+    ((120, 0), (200, 0)),
+    ((200, 0), (200, 200)),
+    ((120, 200), (200, 200)),
+    ((0, 200), (86, 200)),
+    ((86, 157), (86, 200)),
+    ((86, 157), (126, 157)),
+    ((160, 120), (160, 200)),
+    ((160, 120), (50, 120)),
+    ((50, 120), (50, 163)),
+    ((126, 80), (126, 120)),
+    ((0, 80), (86, 80)),
+    ((86, 40), (86, 80)),
+    ((40, 40), (160, 40)),
+    ((160, 40), (160, 83)),
+]
+
+# 使用輔助函數來簡化畫線的過程
+def draw_line(start, end):
+    ctx.moveTo(offset_x + start[0], offset_y + start[1])
+    ctx.lineTo(offset_x + end[0], offset_y + end[1])
+
+# 繪製迷宮
+ctx.beginPath()
+for start, end in maze_lines:
+    draw_line(start, end)
+ctx.stroke()</pre>
+<pre><br/><br/></pre>
 <h3>w5</h3>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def print_pyramid(height):
 for i in range(height):
