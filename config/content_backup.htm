@@ -478,7 +478,140 @@ for i in range (len(accessories)):
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 2 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <p></p>
 <h3>w16_exam1</h3>
-<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/a80ef3983e8766c349f1591d3929cc9c/raw/d2f725765f10a1cc93a89f6ec19a8476069f4de0/w16%2520ex1.py">繪出圖像</a></p>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/fd2578d8d926efc79586e82c7f74a07c/raw/fa4f2e710f4c5e334688dd375eecf6022a89d20e/w16%2520ex-1.py">繪出圖像</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+import math
+
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=400, height=400)
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+ctx = canvas.getContext("2d")
+
+# 假設學號最後四碼為 3247，則原點為 (32, 24)
+origin_x, origin_y = 32, 24
+
+# 畫矩形的函式
+def dRect(lux, luy, w, h, s=1, c='#ff0000'):
+    ctx.lineWidth = s
+    ctx.strokeStyle = c
+    ctx.beginPath()
+    ctx.rect(lux, luy, w, h)
+    ctx.stroke()
+
+# 繪製 X 軸和 Y 軸
+def draw_axes():
+    # 繪製 X 軸
+    ctx.beginPath()
+    ctx.moveTo(0, origin_y)
+    ctx.lineTo(canvas.width, origin_y)  # 從左到右
+    ctx.lineWidth = 2
+    ctx.strokeStyle = "black"
+    ctx.stroke()
+
+    # 繪製 Y 軸
+    ctx.beginPath()
+    ctx.moveTo(origin_x, 0)
+    ctx.lineTo(origin_x, canvas.height)  # 從上到下
+    ctx.lineWidth = 2
+    ctx.strokeStyle = "black"
+    ctx.stroke()
+
+    # 標示原點
+    ctx.font = "12px Arial"
+    ctx.fillStyle = "red"
+    ctx.fillText(f"({origin_x}, {origin_y})", origin_x + 5, origin_y - 5)
+
+# 繪製六邊形
+def draw_hexagon(x, y, size):
+    ctx.beginPath()
+    for i in range(6):
+        angle = i * math.pi / 3
+        px = x + size * math.cos(angle)
+        py = y + size * math.sin(angle)
+        if i == 0:
+            ctx.moveTo(px, py)
+        else:
+            ctx.lineTo(px, py)
+    ctx.closePath()
+    ctx.fillStyle = "orange"
+    ctx.fill()
+
+# 繪製菱形
+def draw_diamond(x, y, width, height):
+    ctx.beginPath()
+    ctx.moveTo(x, y - height/2)  # 頂點
+    ctx.lineTo(x + width/2, y)   # 右點
+    ctx.lineTo(x, y + height/2)  # 底點
+    ctx.lineTo(x - width/2, y)   # 左點
+    ctx.closePath()
+    ctx.fillStyle = "teal"
+    ctx.fill()
+
+# 繪製三角形
+def draw_triangle(x, y, size):
+    ctx.beginPath()
+    ctx.moveTo(x, y - size/2)
+    ctx.lineTo(x + size/2, y + size/2)
+    ctx.lineTo(x - size/2, y + size/2)
+    ctx.closePath()
+    ctx.fillStyle = "skyblue"
+    ctx.fill()
+
+# 繪製圓形
+def draw_circle(x, y, radius):
+    ctx.beginPath()
+    ctx.arc(x, y, radius, 0, 2 * math.pi)
+    ctx.fillStyle = "magenta"
+    ctx.fill()
+
+# 繪製正方形
+def draw_square(x, y, size):
+    ctx.fillStyle = "gold"
+    ctx.fillRect(x - size/2, y - size/2, size, size)
+
+# 繪製長方形
+def draw_rectangle(x, y, width, height):
+    ctx.fillStyle = "navy"
+    ctx.fillRect(x - width/2, y - height/2, width, height)
+
+# 主程式
+def main():
+    # 繪製座標系統
+    draw_axes()
+
+    # 設定起始位置（從六邊形開始）
+    start_x = 100  # 可調整起始位置
+    y = 200        # 垂直位置
+
+    # 繪製六邊形
+    ctx.fillStyle = "red" if origin_x == 32 and origin_y == 24 else "orange"
+    draw_hexagon(start_x, y, 40)
+
+    # 繪製菱形
+    ctx.fillStyle = "red" if origin_x == 32 and origin_y == 24 else "teal"
+    draw_diamond(start_x + 80, y, 60, 80)
+
+    # 繪製三角形
+    ctx.fillStyle = "red" if origin_x == 32 and origin_y == 24 else "skyblue"
+    draw_triangle(start_x + 160, y, 50)
+
+    # 繪製圓形
+    ctx.fillStyle = "red" if origin_x == 32 and origin_y == 24 else "magenta"
+    draw_circle(start_x + 240, y, 35)
+
+    # 繪製正方形
+    ctx.fillStyle = "red" if origin_x == 32 and origin_y == 24 else "gold"
+    draw_square(start_x + 320, y, 70)
+
+    # 繪製長方形
+    ctx.fillStyle = "red" if origin_x == 32 and origin_y == 24 else "navy"
+    draw_rectangle(start_x + 400, y, 80, 40)
+
+# 執行主程式
+main()</pre>
+<pre><br/><br/></pre>
 <h1>HW 3</h1>
 <h4>主題: Python 的數字、演算法與迴圈 (20%)</h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 4 and Part 5</p>
