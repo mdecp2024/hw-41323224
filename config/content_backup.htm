@@ -313,6 +313,144 @@ todays_menu.insert(side_dish_index, "fries")  # 修正變數名稱
 print(todays_menu)</pre>
 </div>
 </div>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/d5f78bac75f21263a010f4c4a3f3dbb5/raw/bbea9cb38cbb83a8a8ab891c1bc719aaa6a22e28/w12-6.py">題目六</a></p>
+<div class="line number1 index0 alt2">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">cities = ["San Diego", "Prague", "Cape Town", "Tokyo", "Melbourne"]
+print(cities)
+print(cities[1])
+print(cities[1:4])
+print(cities[1:4:2])
+print(cities[0:3])
+print(cities[:3])
+print(cities[2:5])
+print(cities[2:])
+print(cities[0:5:2])
+print(cities[4])
+print(cities[-1])
+print(cities[-4:-1])
+print(cities[3:0:-1])
+print(cities[-2:-5:-1])
+print(cities[::-1])</pre>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/dd2cc493a3d9d8ea1fff4390f29421c1/raw/53642b170704ce2d7d64bce1258d0d258c75a684/w12-7.py">題目七</a></p>
+<div class="line number1 index0 alt2">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">senses = ["eyes", "nose", "ears", "tongue", "skin"]
+print (senses)
+senses[1] = "smell"
+print (senses)
+senses[3:5] = ["taste", "touch"]
+print (senses)
+senses[0:3:2] = ["sight", "hearing"]
+print (senses)
+planets = ["Mercury", "Mars", "Earth", "Neptune"]
+print (planets)
+planets = planets + ["Jupiter"]
+print (planets)
+planets = planets[0:2] + ["Venus"] + planets[2:5]
+print (planets)
+planets = planets[:5] + ["Uranus", "Saturn"] + planets[5:]
+print(planets)
+house = ["kitchen", "dining room", "living room", "bedroom", "bathoom", "garden", "balcony", "terrace"]
+print (house)
+del house[1]
+print (house)
+del house[4:6]
+print (house)
+del house[::2]
+print (house)
+del house</pre>
+</div>
+</div>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/efd96f238552f93259b074c98f25bd20/raw/159afa6602ec732f713c0c134ccbc07dead30840/w12-8.py">題目八</a></p>
+<div class="line number1 index0 alt2">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">friends = ["Geetha", "Luca", "Daisy", "Juhan"]
+dishes  = ["sushi", "burgers", "tacos", "pizza"]
+print ("My friends' names are:")
+print (friends)
+for index in range (0,4):
+    print ("index:  " + str(index))
+    print ("friend: " + friends[index])
+print ("Their favorite dishes are:")
+print (dishes)
+for index in range (0,4):
+    print ("index:  " + str(index))
+    print ("dish: " + dishes[index])
+for index in range (0,4):
+    print ("My friend " + friends[index] + "'s favorite dish is " + dishes[index])</pre>
+</div>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/c90c8a03e2e4752b64c500b69646fa4c/raw/3b6420b0916ec15a6ba9c517537179c5de6ddbfb/gistfile1.txt">題目九</a></p>
+<div class="line number1 index0 alt2">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">animals = ["giraffe", "penguin", "dolphin"]
+print (animals)
+# for each position in the list
+for i in range (0, len(animals)):
+    print ("-- Beginning of loop --")
+    # print each element and its position
+    print ("The element in position " + str(i) + " is " + animals[i])
+wanted_to_see = "penguin"
+# for each position in the list
+for i in range (0, len(animals)):
+    # if the current animal is what you really wanted to see
+    if animals[i] == wanted_to_see:
+        # print out that that's the animal you really wanted to see
+        print ("I saw a " + animals[i] + " and I really wanted to see it!")
+    # if the current animal is not what you really wanted to see
+    else:
+        # just print out that you saw it
+        print ("I saw a " + animals[i])</pre>
+</div>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/a6507cb602555bb631ca3a2f281e4380/raw/1dfd4652b7976839a63fcd22f1341c99327b9649/w12-10.py">題目十</a></p>
+<div class="line number1 index0 alt2">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">accessories = ["belt", "hat", "gloves", "sunglasses", "ring"]
+print (accessories)
+# for each position in the list
+for i in range (len(accessories)):
+    #print each elements and its position
+    print ("The element "  + accessories[i] + " is in position " + str(i))
+# for each position in the list
+for i in range (len(accessories)):
+    # if the length of the element equals 6
+    if len(accessories[i]) == 6:
+        # print the element, its position, and its number of characters
+        print ("The element " + accessories[i] + " is in position " + str(i) + " and it has 6 characters")
+# for each position in the list
+for i in range (len(accessories)):
+    # if the length of the element is less than 6
+    if len(accessories[i]) &lt; 6:
+        # print the element, its position, and its number of characters
+        print ("The element " + accessories[i] + " is in position " + str(i) + " and it has less than 6 characters") 
+# defining the threshold
+n_of_characters = 6
+# for each position in the list
+for i in range (len(accessories)):
+    # if the length of the element is greater than the threshold
+    if len(accessories[i]) &gt; n_of_characters:
+        # print the element, its position, and its number of characters
+        print ("The element " + accessories[i] + " is in position " + str(i) + " and it has more than " + str(n_of_characters) + " characters")
+# defining the threshold
+n_of_characters = 6
+# for each position in the list
+for i in range (len(accessories)):
+    # if the length of the element is not equal to the threshold
+    if len(accessories[i]) != n_of_characters:
+        # print the element, its position, and its number of characters
+        print ("The element " + accessories[i] + " is in position " + str(i) + " and it has a number of characters different from " + str(n_of_characters))
+# defining the threshold
+position = 2
+# for each position in the list
+for i in range (len(accessories)):
+    # if the position of the element is less then or equal to to the threshold
+    if i &lt;= position:
+        # print the element, its position, and its position characteristic
+        print ("The element " + accessories[i] + " is in position " + str(i) + ", which is less than or equal to " + str(position))
+# defining the threshold
+position = 2
+# for each position in the list
+for i in range (len(accessories)):
+    # if the position of the element is greater then or equal to to the threshold
+    if i &gt;= position:
+        # print the element, its position, and its position characteristic
+        print ("The element " + accessories[i] + " is in position " + str(i) + ", which is at least " + str(position))</pre>
+</div>
 <h3>w13_hw</h3>
 <p>紅色方框對角線練習</p>
 <p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/3d5fd1b872986f7ceddcfe5aec164bf4/raw/209ef45619ca7cb4c7bafc3fece50dc6c9da57a9/w13%25E6%2594%25B9.py">https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/3d5fd1b872986f7ceddcfe5aec164bf4/raw/209ef45619ca7cb4c7bafc3fece50dc6c9da57a9/w13%25E6%2594%25B9.py</a></p>
@@ -323,7 +461,7 @@ print(todays_menu)</pre>
 <h3>w14_ex</h3>
 <p><span>根據兩個圓繪圖所圍成的區塊</span><span>進行不同顏色著色</span></p>
 <p><span><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/86780e25e47cb8a2637b0d5e83398871/raw/40fe3740590f28a8d12b104178db44f61902e197/w14.py">https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/86780e25e47cb8a2637b0d5e83398871/raw/40fe3740590f28a8d12b104178db44f61902e197/w14.py</a></span></p>
-<h3><span>w15</span></h3>
+<h3>w15</h3>
 <p>1 <a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/62f185493e891394abb0be9f8d439de4/raw/8994039c301511511151507ce8bf7d25c7bd0fa7/w15.py">從 1 累加到 100"</a></p>
 <p>2 <a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/543e56f3f94d9575bc4adbf0976296ba/raw/e2a2cbb49843045f4058d5acf83150f9dbd5f75c/w15.py">addto(1,100)</a></p>
 <p></p>
@@ -339,10 +477,8 @@ print(todays_menu)</pre>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 2 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <p></p>
-<h3><span>w16_exam1</span></h3>
-<p>題目1:<a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/a80ef3983e8766c349f1591d3929cc9c/raw/d2f725765f10a1cc93a89f6ec19a8476069f4de0/w16%2520ex1.py">繪出圖像</a></p>
-<p>題目2:<a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/39d094f352882e77d57abfe2deb7acf9/raw/548dda271d79f1364539ce88b9ad01fb8846b65e/gistfile1.txt">迷宮</a></p>
-<p>題目3:<a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/92d7dae910d5d44e9ae9a71b89819982/raw/132e7116c1bd6875874689c507872ee4fd278b29/%25E8%25BF%25B7%25E5%25AE%25AE%25E8%25B7%25AF%25E7%25B7%259A.py">迷宮路線</a></p>
+<h3>w16_exam1</h3>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/a80ef3983e8766c349f1591d3929cc9c/raw/d2f725765f10a1cc93a89f6ec19a8476069f4de0/w16%2520ex1.py">繪出圖像</a></p>
 <h1>HW 3</h1>
 <h4>主題: Python 的數字、演算法與迴圈 (20%)</h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 4 and Part 5</p>
@@ -350,6 +486,8 @@ print(todays_menu)</pre>
 <h2>HW 3 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 3 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
+<h3><span>w16_exam2</span></h3>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/39d094f352882e77d57abfe2deb7acf9/raw/548dda271d79f1364539ce88b9ad01fb8846b65e/gistfile1.txt">迷宮</a></p>
 <h3>w5</h3>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def print_pyramid(height):
 for i in range(height):
@@ -393,6 +531,9 @@ print_pyramid(pyramid_height)
 <h2>HW 4 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 4 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
+<p></p>
+<h3>w16_exam3</h3>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/92d7dae910d5d44e9ae9a71b89819982/raw/132e7116c1bd6875874689c507872ee4fd278b29/%25E8%25BF%25B7%25E5%25AE%25AE%25E8%25B7%25AF%25E7%25B7%259A.py">迷宮路線</a></p>
 <h1>Final Report</h1>
 <p>期末口頭與書面專題報告 (20%)</p>
 <p>期末口頭專題報告影片:</p>
