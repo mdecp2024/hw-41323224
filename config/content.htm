@@ -313,6 +313,144 @@ todays_menu.insert(side_dish_index, "fries")  # 修正變數名稱
 print(todays_menu)</pre>
 </div>
 </div>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/d5f78bac75f21263a010f4c4a3f3dbb5/raw/bbea9cb38cbb83a8a8ab891c1bc719aaa6a22e28/w12-6.py">題目六</a></p>
+<div class="line number1 index0 alt2">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">cities = ["San Diego", "Prague", "Cape Town", "Tokyo", "Melbourne"]
+print(cities)
+print(cities[1])
+print(cities[1:4])
+print(cities[1:4:2])
+print(cities[0:3])
+print(cities[:3])
+print(cities[2:5])
+print(cities[2:])
+print(cities[0:5:2])
+print(cities[4])
+print(cities[-1])
+print(cities[-4:-1])
+print(cities[3:0:-1])
+print(cities[-2:-5:-1])
+print(cities[::-1])</pre>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/dd2cc493a3d9d8ea1fff4390f29421c1/raw/53642b170704ce2d7d64bce1258d0d258c75a684/w12-7.py">題目七</a></p>
+<div class="line number1 index0 alt2">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">senses = ["eyes", "nose", "ears", "tongue", "skin"]
+print (senses)
+senses[1] = "smell"
+print (senses)
+senses[3:5] = ["taste", "touch"]
+print (senses)
+senses[0:3:2] = ["sight", "hearing"]
+print (senses)
+planets = ["Mercury", "Mars", "Earth", "Neptune"]
+print (planets)
+planets = planets + ["Jupiter"]
+print (planets)
+planets = planets[0:2] + ["Venus"] + planets[2:5]
+print (planets)
+planets = planets[:5] + ["Uranus", "Saturn"] + planets[5:]
+print(planets)
+house = ["kitchen", "dining room", "living room", "bedroom", "bathoom", "garden", "balcony", "terrace"]
+print (house)
+del house[1]
+print (house)
+del house[4:6]
+print (house)
+del house[::2]
+print (house)
+del house</pre>
+</div>
+</div>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/efd96f238552f93259b074c98f25bd20/raw/159afa6602ec732f713c0c134ccbc07dead30840/w12-8.py">題目八</a></p>
+<div class="line number1 index0 alt2">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">friends = ["Geetha", "Luca", "Daisy", "Juhan"]
+dishes  = ["sushi", "burgers", "tacos", "pizza"]
+print ("My friends' names are:")
+print (friends)
+for index in range (0,4):
+    print ("index:  " + str(index))
+    print ("friend: " + friends[index])
+print ("Their favorite dishes are:")
+print (dishes)
+for index in range (0,4):
+    print ("index:  " + str(index))
+    print ("dish: " + dishes[index])
+for index in range (0,4):
+    print ("My friend " + friends[index] + "'s favorite dish is " + dishes[index])</pre>
+</div>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/c90c8a03e2e4752b64c500b69646fa4c/raw/3b6420b0916ec15a6ba9c517537179c5de6ddbfb/gistfile1.txt">題目九</a></p>
+<div class="line number1 index0 alt2">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">animals = ["giraffe", "penguin", "dolphin"]
+print (animals)
+# for each position in the list
+for i in range (0, len(animals)):
+    print ("-- Beginning of loop --")
+    # print each element and its position
+    print ("The element in position " + str(i) + " is " + animals[i])
+wanted_to_see = "penguin"
+# for each position in the list
+for i in range (0, len(animals)):
+    # if the current animal is what you really wanted to see
+    if animals[i] == wanted_to_see:
+        # print out that that's the animal you really wanted to see
+        print ("I saw a " + animals[i] + " and I really wanted to see it!")
+    # if the current animal is not what you really wanted to see
+    else:
+        # just print out that you saw it
+        print ("I saw a " + animals[i])</pre>
+</div>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/a6507cb602555bb631ca3a2f281e4380/raw/1dfd4652b7976839a63fcd22f1341c99327b9649/w12-10.py">題目十</a></p>
+<div class="line number1 index0 alt2">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">accessories = ["belt", "hat", "gloves", "sunglasses", "ring"]
+print (accessories)
+# for each position in the list
+for i in range (len(accessories)):
+    #print each elements and its position
+    print ("The element "  + accessories[i] + " is in position " + str(i))
+# for each position in the list
+for i in range (len(accessories)):
+    # if the length of the element equals 6
+    if len(accessories[i]) == 6:
+        # print the element, its position, and its number of characters
+        print ("The element " + accessories[i] + " is in position " + str(i) + " and it has 6 characters")
+# for each position in the list
+for i in range (len(accessories)):
+    # if the length of the element is less than 6
+    if len(accessories[i]) &lt; 6:
+        # print the element, its position, and its number of characters
+        print ("The element " + accessories[i] + " is in position " + str(i) + " and it has less than 6 characters") 
+# defining the threshold
+n_of_characters = 6
+# for each position in the list
+for i in range (len(accessories)):
+    # if the length of the element is greater than the threshold
+    if len(accessories[i]) &gt; n_of_characters:
+        # print the element, its position, and its number of characters
+        print ("The element " + accessories[i] + " is in position " + str(i) + " and it has more than " + str(n_of_characters) + " characters")
+# defining the threshold
+n_of_characters = 6
+# for each position in the list
+for i in range (len(accessories)):
+    # if the length of the element is not equal to the threshold
+    if len(accessories[i]) != n_of_characters:
+        # print the element, its position, and its number of characters
+        print ("The element " + accessories[i] + " is in position " + str(i) + " and it has a number of characters different from " + str(n_of_characters))
+# defining the threshold
+position = 2
+# for each position in the list
+for i in range (len(accessories)):
+    # if the position of the element is less then or equal to to the threshold
+    if i &lt;= position:
+        # print the element, its position, and its position characteristic
+        print ("The element " + accessories[i] + " is in position " + str(i) + ", which is less than or equal to " + str(position))
+# defining the threshold
+position = 2
+# for each position in the list
+for i in range (len(accessories)):
+    # if the position of the element is greater then or equal to to the threshold
+    if i &gt;= position:
+        # print the element, its position, and its position characteristic
+        print ("The element " + accessories[i] + " is in position " + str(i) + ", which is at least " + str(position))</pre>
+</div>
 <h3>w13_hw</h3>
 <p>紅色方框對角線練習</p>
 <p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/3d5fd1b872986f7ceddcfe5aec164bf4/raw/209ef45619ca7cb4c7bafc3fece50dc6c9da57a9/w13%25E6%2594%25B9.py">https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/3d5fd1b872986f7ceddcfe5aec164bf4/raw/209ef45619ca7cb4c7bafc3fece50dc6c9da57a9/w13%25E6%2594%25B9.py</a></p>
