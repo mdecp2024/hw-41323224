@@ -242,7 +242,7 @@ print("(", x, ", ", y,")",sep="")</pre>
 <p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/e123131d8851e3c32e11011c3d1f8968/raw/95394f58cb55dca0ab132b2165ce2347c579b305/hw3.py">圖框</a></p>
 <p></p>
 <h3>w12_hw</h3>
-<p>題目一</p>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/e0536f8e6502af336e0618bad41a2a82/raw/14b0ed921ccc9d6f1a418e03e8886abcc3375d5c/w12-1.py">題目一</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">"this is a string"
 'everything you write in between quotes is a string'
 help("input")
@@ -253,7 +253,7 @@ print (" &gt;^.^&lt;   ")
 print ("  / \    ")
 print (" (___)___")
 help("print")</pre>
-<p>題目二<br/><br/></p>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/3cc5db918a3a548436d7a1da384f7439/raw/6dfd3729595a8d59e0fab3824d73e7dbe47e7bd3/w12.py">題目二</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">first_name = "Fernando"
 last_name  = "Pérez"
 print (first_name)
@@ -264,7 +264,7 @@ print ("Hi! My name is " + name)
 print ("My favorite food is " + favorite_food) 
 print (name + "'s favorite food is " + favorite_food)</pre>
 <p></p>
-<p>題目三</p>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/bcb30b25079c5faaab1f229f0f104629/raw/1030a8e273723c8db1010783dc2c9d21d53915e2/w12-3.py">題目三</a></p>
 <div class="line number1 index0 alt2">
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">programming_books = ["Learn python", "Python for all",  "Intro to python"]
 print (programming_books)
@@ -275,8 +275,44 @@ if wanted_book in programming_books:
 else:
     print ("Sorry, we don't sell that book")</pre>
 </div>
-<p></p>
-<p></p>
+<p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/138cd8bd2f78767996dfe8477a9ca4c2/raw/559243e1be4fa485f29cfe3fcfe1e224aea48e04/w12-4.py">題目四</a></p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_47130">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">shopping_list = ["carrots", "chocolate", "olives"]
+print (shopping_list)
+new_item = input("What else do I have to buy?")
+  
+if new_item in shopping_list:
+    print (new_item + " is/are already in the shopping list")
+    print (shopping_list)
+else:
+    shopping_list.append(new_item)
+    print (shopping_list)
+      
+item_to_remove = input("What do I have to remove?")
+  
+if item_to_remove in shopping_list:
+    shopping_list.remove(item_to_remove)
+    print (shopping_list)
+else:
+    print (item_to_remove + " is/are not in the list")
+    print (shopping_list)
+</pre>
+</div>
+</div>
+<div class="line number1 index0 alt2"><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/6e3d0d2400006d7b78d60443e14002fb/raw/d6fdce9c9450b86154284061d011edf85fd93de9/w12-5.py">題目五</a></div>
+<div class="line number1 index0 alt2">
+<div class="line number1 index0 alt2">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">todays_menu = ["burger", "salad", "coke"]
+print(todays_menu)
+side_dish_index = todays_menu.index("salad")
+print(side_dish_index)
+todays_menu.pop(side_dish_index)
+print(todays_menu)
+todays_menu.insert(side_dish_index, "fries")  # 修正變數名稱
+print(todays_menu)</pre>
+</div>
+</div>
 <h3>w13_hw</h3>
 <p>紅色方框對角線練習</p>
 <p><a href="https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/3d5fd1b872986f7ceddcfe5aec164bf4/raw/209ef45619ca7cb4c7bafc3fece50dc6c9da57a9/w13%25E6%2594%25B9.py">https://mdecp2024.github.io/hw-41323224/content/Brython.html?src=https://gist.githubusercontent.com/41323224/3d5fd1b872986f7ceddcfe5aec164bf4/raw/209ef45619ca7cb4c7bafc3fece50dc6c9da57a9/w13%25E6%2594%25B9.py</a></p>
